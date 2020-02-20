@@ -1,0 +1,20 @@
+mixin product(props)
+  article.product.container
+    .product__wrap
+      .product__img
+        img(src=/img/ + props.img + '.png')
+    .product__wrap
+      .product__sale
+        span.product__sale--text= props.sale
+        svg.product__sale--arrow(width="15", height="20")
+          use(xlink:href="img/sprite-svg.svg#sale-arrow")
+      h2.product__name= props.name
+      p.product__descr= props.descr
+      .product__img--mobile
+        img(src=/img/ + props.img + '.png')
+      .product__price
+        span= props.price + ' ₽'
+        span.product__price--sale= props.price_sale + ' ₽'
+      .product__btn
+        +btn('Добавить в корзину')
+        +btn('Узнать подробнее', 'border')

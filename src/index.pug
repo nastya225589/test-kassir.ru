@@ -1,0 +1,23 @@
+extends templates/layout-home.pug
+
+block meta
+  title Home
+  meta(name='description', content='Home page!')
+
+//- block append head
+//-   link(rel="stylesheet", href="some.css")
+//-   script(src='some.js')
+
+block content
+  .products
+    +product({
+      img: 'armchair',
+      sale: 'Распродажа',
+      name: 'Кресло «Лео»',
+      descr: 'Мы создали его точно по размерам оригинального кресла короля Леопольда.',
+      price: '25 000',
+      price_sale: '123123'
+    })
+
+//- block append page-bottom
+//-   script(src='some.js')
